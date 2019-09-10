@@ -49,6 +49,11 @@ window.addEventListener("load", event => {
   introSectionPara.style.display = "none";
 });
 
+// show hidden paragraph on click of h2
+document.querySelector(".intro h2").addEventListener("click", event => {
+  introSectionPara.style.display = "";
+});
+
 // on scroll wheel change font size of first p element of content-section inverse content text content
 const inverseContentSectionPara = document.querySelector(
   ".content-section.inverse-content .text-content p"
@@ -77,7 +82,7 @@ document
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach(button => {
   button.addEventListener("click", event => {
-    button.style.backgroundColor = 'red';
+    button.style.backgroundColor = "red";
     event.stopPropagation();
   });
 });
@@ -87,5 +92,12 @@ const destinationSections = document.querySelectorAll(".destination");
 destinationSections.forEach(destination => {
   destination.addEventListener("click", event => {
     destination.style.backgroundColor = "blue";
+  });
+});
+
+// change background back to white on double click of div
+destinationSections.forEach(destination => {
+  destination.addEventListener("dblclick", event => {
+    destination.style.backgroundColor = "";
   });
 });
